@@ -1,0 +1,177 @@
+.order-item {
+  display: grid;
+  grid-template-columns: 0.7fr 2fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+  padding: 22px;
+  margin: 25px 0;
+  background: #fffdfc;
+  border: 1px solid #AB162C;
+  border-left: 5px solid #AB162C;
+  border-radius: 12px;
+  color: #333;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+/* Hover improvement */
+.order-item:hover {
+  background: #fff6f6;
+  box-shadow: 0 4px 16px rgba(171, 22, 44, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Food name */
+.order-item-food {
+  font-weight: 600;
+  font-size: 17px;
+  color: #1a1a1a;
+}
+
+/* Customer name highlighted with red */
+.order-item-name {
+  font-weight: 700;
+  color: #AB162C;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+/* Address text softer */
+.order-item-address {
+  color: #666;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* Order Age — bigger and new accent color */
+.order-age {
+  font-size: 20px;
+  font-weight: bold;
+  color: #C89B3C;
+}
+
+/* Price stays bold with red */
+.order-item .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #AB162C;
+}
+
+/* Select dropdown blended colors */
+.order-item select {
+  background-color: #fff4f2;
+  border: 2px solid #AB162C;
+  width: max(10vw, 120px);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  transition: 0.2s ease;
+}
+
+.order-item select:hover {
+  background: #ffe8e4;
+}
+
+.order-item select:focus {
+  box-shadow: 0 0 0 3px rgba(171, 22, 44, 0.25);
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width: 1000px) {
+  .order-item {
+    grid-template-columns: 0.7fr 2fr 1fr;
+    font-size: 14px;
+    padding: 18px;
+    gap: 15px;
+  }
+
+  .order-age {
+    font-size: 18px;
+  }
+
+  .order-item select {
+    padding: 8px;
+  }
+}
+
+@media(max-width: 650px) {
+  .order-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .order-item select {
+    width: 100%;
+  }
+
+  .order-age {
+    font-size: 17px;
+  }
+}
+.top{
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Small underline accent using gold (secondary color) */
+.top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 50px;
+  height: 3px;
+  background-color: #C89B3C;
+  border-radius: 2px;
+}
+
+/* Hover subtle effect */
+.top:hover {
+  color: #941323;
+  transition: 0.2s;
+}
+
+.order-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background: #ffe8e4;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #AB162C;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.order-icon:hover {
+  background: rgba(171, 22, 44, 0.1);
+  transform: scale(1.05);
+}
+
+/* Responsive sizes */
+@media (max-width: 768px) {
+  .order-icon {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-icon {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+}

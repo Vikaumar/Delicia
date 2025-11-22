@@ -1,0 +1,296 @@
+/* ===========================================
+   PLACE ORDER COMPONENT STYLES
+   =========================================== */
+
+/* Main Container */
+.place-order {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    margin: 100px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* ===========================================
+   LEFT SECTION - DELIVERY INFORMATION
+   =========================================== */
+
+.place-order-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.place-order-left .title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+    border-bottom: 3px solid tomato;
+    padding-bottom: 15px;
+}
+
+/* Form Input Styling */
+.place-order-left input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.place-order-left input:focus {
+    outline: none;
+    border-color: tomato;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.1);
+    transform: translateY(-1px);
+}
+
+.place-order-left input:hover {
+    border-color: #ccc;
+    background-color: white;
+}
+
+.place-order-left input::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+/* Multi-field Layout */
+.place-order-left .multi-field {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.place-order-left .multi-field input {
+    margin-bottom: 20px;
+}
+
+/* ===========================================
+   RIGHT SECTION - CART TOTALS
+   =========================================== */
+
+.place-order-right {
+    flex: 0 0 400px;
+    min-width: 300px;
+    margin-top: 90px;
+}
+
+/* Cart Total Card */
+.cart-total {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    top: 20px;
+}
+
+.cart-total h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+/* Cart Total Details */
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 16px;
+}
+
+.cart-total-details p {
+    margin: 0;
+    color: #555;
+}
+
+.cart-total-details b {
+    color: #333;
+    font-size: 18px;
+}
+
+.cart-total hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ddd, transparent);
+    margin: 8px 0;
+}
+
+/* Submit Button */
+.place-order-submit {
+    width: 100%;
+    margin-top: 30px;
+    padding: 16px 30px;
+    border: none;
+    background: linear-gradient(135deg, tomato 0%, #ff6347 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
+    position: relative;
+}
+
+.place-order-submit:hover {
+    background: linear-gradient(135deg, #ff4500 0%, #ff6347 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
+}
+
+.place-order-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 99, 71, 0.3);
+}
+
+.place-order-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+/* Tablet Styles */
+@media (max-width: 968px) {
+    .place-order {
+        gap: 40px;
+        margin: 80px auto;
+    }
+    
+    .place-order-right {
+        flex: 0 0 350px;
+    }
+    
+    .cart-total {
+        padding: 25px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .place-order {
+        flex-direction: column;
+        gap: 30px;
+        margin: 60px auto;
+        padding: 0 15px;
+    }
+    
+    .place-order-left,
+    .place-order-right {
+        width: 100%;
+        max-width: none;
+        flex: none;
+    }
+    
+    .place-order-left .title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .place-order-left .multi-field {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .cart-total {
+        position: static;
+        padding: 20px;
+    }
+    
+    .cart-total h2 {
+        font-size: 22px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .place-order {
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+    
+    .place-order-left input {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .place-order-left .title {
+        font-size: 24px;
+    }
+    
+    .cart-total {
+        padding: 15px;
+    }
+    
+    .place-order-submit {
+        padding: 14px 25px;
+        font-size: 16px;
+    }
+}
+
+/* ===========================================
+   ACCESSIBILITY & UX ENHANCEMENTS
+   =========================================== */
+
+/* Focus visible for better accessibility */
+.place-order-left input:focus-visible {
+    outline: 2px solid tomato;
+    outline-offset: 2px;
+}
+
+.place-order-submit:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* Smooth animations */
+* {
+    box-sizing: border-box;
+}
+
+/* Loading state for submit button */
+.place-order-submit.loading {
+    position: relative;
+    color: transparent;
+}
+
+.place-order-submit.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

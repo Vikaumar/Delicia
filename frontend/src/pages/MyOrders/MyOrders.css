@@ -1,0 +1,218 @@
+/* MyOrders — modern clean design */
+
+:root{
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #111827;
+  --accent: #AB162C;
+  --accent-600: #8f121f;
+  --success-bg: #e8f5e8;
+  --shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
+
+.my-orders {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 0 20px 60px;
+  color: var(--text);
+  background: transparent; /* clean page background - rely on app background */
+}
+
+.my-orders h2 {
+  font-size: 3  8px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+/* small subtitle */
+.my-orders h2 + p {
+  margin: 6px 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* container: stacked cards with comfortable spacing */
+.my-orders .container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* empty state */
+.my-orders .container p {
+  text-align: center;
+  color: var(--muted);
+  background: #ffffff;
+  border: 1px solid #eef2f6;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  font-style: normal;
+  font-size: 15px;
+}
+
+/* order card */
+.my-orders-order {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  border-left: 6px solid rgba(171,22,44,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.my-orders-order:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(16,24,40,0.08);
+}
+
+/* order icon */
+.my-orders-order img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #fafafa;
+  padding: 6px;
+  border: 1px solid #f1f5f9;
+}
+
+/* main info column */
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* items line */
+.order-items {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* meta row: use responsive layout */
+.order-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  align-items: center;
+}
+
+/* amount pill */
+.order-amount {
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(180deg, var(--accent), var(--accent-600));
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  display: inline-block;
+  min-width: 88px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(171,22,44,0.12);
+}
+
+/* promo block (subtle) */
+.order-promo {
+  background: linear-gradient(90deg, rgba(255,241,233,0.95), rgba(255,250,240,0.95));
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid rgba(171,22,44,0.14);
+  min-width: 180px;
+}
+
+.order-promo p { margin: 0; font-size: 13px; color: #7a4a3a; font-weight: 600; }
+
+/* items count */
+.order-meta p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* status badge */
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f8fafb;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  border: 1px solid #f1f5f9;
+}
+
+.order-status span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* color dot by status (fallback) */
+.order-status[data-status="Food Processing"] span { background: #ffb56b; }
+.order-status[data-status="Delivered"] span { background: #22c55e; }
+.order-status[data-status="Cancelled"] span { background: #ef4444; }
+.order-status[data-status="Pending"] span { background: #f59e0b; }
+
+/* right column: action */
+.my-orders-order .order-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  min-width: 140px;
+}
+
+/* track button */
+.my-orders button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-600));
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(171,22,44,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.my-orders button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(171,22,44,0.18);
+}
+
+/* date small text */
+.order-date {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* responsive: stack on small screens */
+@media (max-width: 820px) {
+  .my-orders-order {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .my-orders-order .order-actions {
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .order-meta { justify-content: space-between; }
+}

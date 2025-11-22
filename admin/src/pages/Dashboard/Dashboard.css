@@ -1,0 +1,172 @@
+/* Dashboard.css */
+
+.dashboard {
+  width: 100%;
+  min-height: 100%;
+  padding: 32px;
+  background: #f5f7fa;
+  font-family: "Outfit", sans-serif;
+  flex: 1;
+}
+
+.dashboard h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #222;
+  letter-spacing: -0.5px;
+}
+
+/* Summary section */
+.dashboard-summary {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.summary-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.25s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.summary-card h3 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.summary-card p {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Button styling */
+button {
+  margin-top: 25px;
+  padding: 10px 22px;
+  background: #E53935;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #C62828;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 28px;
+  }
+
+  .dashboard h2 {
+    font-size: 28px;
+  }
+
+  .dashboard-summary {
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-card {
+    padding: 20px;
+  }
+
+  .summary-card p {
+    font-size: 24px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 24px;
+  }
+
+  .dashboard h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 25px;
+  }
+
+  .summary-card {
+    padding: 18px;
+  }
+
+  .summary-card h3 {
+    font-size: 16px;
+  }
+
+  .summary-card p {
+    font-size: 22px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 16px;
+  }
+
+  .dashboard h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .dashboard-summary {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .summary-card {
+    padding: 16px;
+  }
+
+  .summary-card h3 {
+    font-size: 14px;
+  }
+
+  .summary-card p {
+    font-size: 20px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}

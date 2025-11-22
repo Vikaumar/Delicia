@@ -1,0 +1,224 @@
+.promotions {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    gap: 20px;
+    margin: 60px auto;
+    max-width: 1400px;
+    padding: 50px 50px;
+    height: 600px;
+    margin-top: 15vh;
+}
+
+.promo-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 250px;
+  font-family: '"IBM Plex Sans", sans-serif';
+  font-style: italic;
+  text-transform: uppercase; /* all caps */
+  letter-spacing: 1px;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Removed the gradient overlay */
+.promo-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.promo-card h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 15px 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+.badge {
+  background: #ffcc00;
+  color: #000;
+  padding: 8px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+  margin-bottom: 10px;
+  display: inline-block;
+  clip-path: polygon(100% 0%, 85% 50%, 100% 100%, 0px 100%, 0% 50%, 0px 0px);
+  padding-right: 30px;
+  padding-left: 15px;
+}
+
+.shop-btn {
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-text {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-text::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;                /* anchor underline to left */
+  width: 0;               /* start with no width */
+  height: 2px;
+  background-color: currentColor; /* same as text */
+  transition: width 0.3s ease;
+}
+
+.shop-btn:hover .btn-text::after {
+  width: 100%;            /* expand fully on hover */
+}
+
+.shop-btn svg {
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+
+/* 🔴 Red Button */
+.shop-btn.red { color: white; }
+
+/* 🔵 Blue Button */
+.shop-btn.blue { color: white; }
+
+/* 🟡 Yellow Button */
+.shop-btn.yellow { color: white; }
+
+/* 🟢 Green Button */
+.shop-btn.green {
+     color: white; 
+     margin-bottom: 45px;
+    }
+
+
+
+/* Background image styles - removed gradient overlays */
+.promo-card.food-quality {
+  background-image: url('../../assets/img2.jpg');
+}
+
+
+.promo-card.burger-combo {
+  background-image: url('../../assets/img1.jpg');
+  background-position: 40% 95%;
+}
+
+.promo-card.hot-deals-red {
+  background-image: url('../../assets/img3.avif');
+  background-position:  80%;
+}
+
+.promo-card.hot-deals-yellow {
+  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80');
+}
+
+/* Grid positioning for the specific layout */
+/* Card 1: Top-left, spans 2 rows, 2 columns */
+.promo-card:nth-child(1) {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+}
+
+.promo-card:nth-child(1) h2 {
+  font-size: 2.8rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+.promo-card:nth-child(4) h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: black;
+}
+
+/* Card 2: Bottom-right */
+.promo-card:nth-child(2) {
+  grid-row: 2;
+  grid-column: 3;
+  font-weight: 900;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Card 3: Bottom-left */
+.promo-card:nth-child(3) {
+  grid-row: 2;
+  grid-column: 2;
+  font-weight: 900;
+
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Card 4: Top-right, spans 2 columns */
+.promo-card:nth-child(4) {
+  grid-row: 1;
+  grid-column: 2 / span 2;
+}
+
+/* Special badge positioning for bottom right card */
+.promo-card:nth-child(4) .badge.discount {
+  position: absolute;
+  bottom: 80px;
+  left: 25px;
+  background: #ff4757;
+  color: #fff;
+  z-index: 3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .promotions {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 250px);
+    margin: 20px auto;
+    gap: 15px;
+    padding: 0 15px;
+    height: auto;
+  }
+  
+  .promo-card:nth-child(1),
+  .promo-card:nth-child(2),
+  .promo-card:nth-child(3),
+  .promo-card:nth-child(4) {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  
+  .promo-card h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .promo-card {
+    padding: 25px;
+  }
+}
