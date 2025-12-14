@@ -37,40 +37,35 @@ Delicia is a **production-oriented full-stack food ordering web application** bu
 
 ## ✨ Key Features
 
-### User Module
+### Core Functionalities
+
+* Secure online payments using **Stripe Checkout** with server-side order validation
+* **JWT-based authentication** with role-based access control (User / Admin / Delivery)
+* **Real-time order status updates** using WebSockets for instant UI synchronization
+* **Email subscription system** for offers and updates
+* **Integrated chatbot assistant** for menu, pricing, ordering help, and recommendations
+
+### User Experience
 
 * Browse food items with category-based listing
-* Add/remove items from cart
-* Dynamic cart total calculation
+* Add/remove items from cart with dynamic price calculation
 * Localized currency formatting (₹ INR)
-* Responsive UI for multiple screen sizes
+* Responsive UI built primarily with Tailwind CSS and custom CSS
 
-### AI Chatbot Assistant
+### Admin & Operations
 
-* Integrated **Delicia Assistant** chatbot for user support
-* Handles common queries like menu, pricing, ordering steps, and recommendations
-* Quick-action buttons for faster user interaction
-* Always-available floating chat widget enhancing UX
-
-### Subscription System
-
-* Email subscription feature for offers and updates
-* User-friendly subscribe input in footer section
-* Foundation ready for newsletter / marketing automation integration
-
-### Admin Module
-
-* Secure admin dashboard
-* Add, update, and delete food items
-* Image upload for products
-* Centralized menu management
+* Admin dashboard to manage users, food items, and orders
+* Analytics dashboard showing order volume, revenue trends, and user activity
+* Delivery personnel management system for order assignment and delivery tracking
+* Image upload and centralized menu management
 
 ### Engineering Highlights
 
 * Modular React component architecture
-* RESTful API design using Express
+* RESTful API design using Express.js
 * MongoDB schema modeling with Mongoose
-* Separation of concerns across services
+* WebSocket-based real-time communication layer
+* Clean separation of frontend, backend, and admin services
 * Ready for deployment and scaling
 
 ---
@@ -80,8 +75,9 @@ Delicia is a **production-oriented full-stack food ordering web application** bu
 **Frontend**
 
 * React.js
+* Tailwind CSS (primary styling framework)
+* Custom CSS (for fine-grained control where utility classes are insufficient)
 * JavaScript (ES6+)
-* CSS / Tailwind CSS
 * Axios
 
 **Backend**
@@ -198,3 +194,4 @@ This project is licensed under the **MIT License**.
 ---
 
 ⭐ *This project is actively maintained and open to contributions.*
+
