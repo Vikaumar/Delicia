@@ -36,11 +36,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Center - Search or Brand Name can go here */}
-      <div className='navbar-center'>
-        <span className='navbar-title'>Admin Panel</span>
-      </div>
-
       <div className='navbar-right'>
         {/* Notification Bell */}
         <div className='notification-container'>
@@ -88,11 +83,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Settings Icon */}
-        <button className='navbar-btn settings-btn' title="Settings">
-          <Settings size={20} />
-        </button>
-
         {/* Profile Section */}
         <div className='profile-section'>
           <button 
@@ -104,13 +94,13 @@ const Navbar = () => {
             </div>
             <div className='profile-info'>
               <span className='profile-name'>Admin</span>
-              <span className='profile-role'>Owner</span>
+              <span className='profile-role'>Vikas</span>
             </div>
             <ChevronDown size={18} className={`chevron ${showProfile ? 'open' : ''}`} />
           </button>
 
           {/* Profile Dropdown */}
-          {showProfile && (
+          {/* {showProfile && (
             <div className='profile-dropdown'>
               <button className='dropdown-item'>
                 <User size={16} />
@@ -129,7 +119,7 @@ const Navbar = () => {
                 <span>Logout</span>
               </button>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
