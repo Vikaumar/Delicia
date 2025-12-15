@@ -1,0 +1,130 @@
+[
+  {
+    "_id": "1",
+    "name": "Classic Caesar Salad",
+    "description": "Crisp romaine lettuce, shaved parmesan, crunchy croutons, and Caesar dressing.",
+    "category": "Salad",
+    "price": 9.99,
+    "imageFile": "food_1.png"
+  },
+  {
+    "_id": "2",
+    "name": "Mediterranean Greek Salad",
+    "description": "Tomatoes, cucumbers, olives, feta cheese, red onions & oregano vinaigrette.",
+    "category": "Salad",
+    "price": 10.49,
+    "imageFile": "food_23.png"
+  },
+  {
+    "_id": "3",
+    "name": "Veggie Spring Roll",
+    "description": "Rice paper rolls stuffed with fresh veggies, served with sweet chili dip.",
+    "category": "Rolls",
+    "price": 7.50,
+    "imageFile": "food_6.png"
+  },
+  {
+    "_id": "4",
+    "name": "Spicy Chicken Kathi Roll",
+    "description": "Tandoori‑spiced chicken wrapped in a warm paratha with onions & chutney.",
+    "category": "Rolls",
+    "price": 8.99,
+    "imageFile": "food_7.png"
+  },
+  {
+    "_id": "5",
+    "name": "Decadent Chocolate Brownie",
+    "description": "Rich, fudgy brownie topped with a drizzle of dark chocolate ganache.",
+    "category": "Deserts",
+    "price": 5.99,
+    "imageFile": "food_9.png"
+  },
+  {
+    "_id": "6",
+    "name": "Seasonal Fruit Tart",
+    "description": "Buttery crust filled with vanilla custard and topped with fresh fruits.",
+    "category": "Deserts",
+    "price": 6.49,
+    "imageFile": "food_11.png"
+  },
+  {
+    "_id": "7",
+    "name": "Classic Club Sandwich",
+    "description": "Turkey, bacon, lettuce, tomato & mayo stacked between toasted bread.",
+    "category": "Sandwich",
+    "price": 11.25,
+    "imageFile": "food_13.png"
+  },
+  {
+    "_id": "8",
+    "name": "Grilled Veggie Panini",
+    "description": "Zucchini, bell peppers, mushrooms & mozzarella on ciabatta, pressed crisp.",
+    "category": "Sandwich",
+    "price": 10.75,
+    "imageFile": "food_14.png"
+  },
+  {
+    "_id": "9",
+    "name": "Chocolate Truffle Cake",
+    "description": "Layered chocolate sponge with creamy dark chocolate truffle filling.",
+    "category": "Cake",
+    "price": 4.99,
+    "imageFile": "food_19.png"
+  },
+  {
+    "_id": "10",
+    "name": "Red Velvet Celebration Cake",
+    "description": "Moist red velvet layers with smooth cream cheese frosting.",
+    "category": "Cake",
+    "price": 5.49,
+    "imageFile": "food_20.png"
+  },
+  {
+    "_id": "11",
+    "name": "Paneer Butter Masala",
+    "description": "Cottage cheese cubes in a rich, buttery tomato gravy, served with rice.",
+    "category": "Pure Veg",
+    "price": 12.99,
+    "imageFile": "food_4.png"
+  },
+  {
+    "_id": "12",
+    "name": "Mixed Vegetable Curry",
+    "description": "Seasonal vegetables simmered in a spiced onion-tomato sauce.",
+    "category": "Pure Veg",
+    "price": 11.49,
+    "imageFile": "food_22.png"
+  },
+  {
+    "_id": "13",
+    "name": "Creamy Alfredo Pasta",
+    "description": "Fettuccine tossed in a velvety garlic‑cream sauce with parmesan.",
+    "category": "Pasta",
+    "price": 13.50,
+    "imageFile": "food_26.png"
+  },
+  {
+    "_id": "14",
+    "name": "Arrabbiata Penne",
+    "description": "Penne in a spicy tomato‑chili sauce, garnished with fresh basil.",
+    "category": "Pasta",
+    "price": 12.50,
+    "imageFile": "food_29.png"
+  },
+  {
+    "_id": "15",
+    "name": "Classic Hakka Noodles",
+    "description": "Stir‑fried egg noodles with veggies and a hint of soy and garlic.",
+    "category": "Noodles",
+    "price": 9.99,
+    "imageFile": "food_30.png"
+  },
+  {
+    "_id": "16",
+    "name": "Schezwan Veg Noodles",
+    "description": "Spicy Indo‑Chinese noodles with bell peppers, cabbage & Schezwan sauce.",
+    "category": "Noodles",
+    "price": 10.49,
+    "imageFile": "food_32.png"
+  }
+]

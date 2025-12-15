@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap');
+
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+:root {
+  /* set this to your actual navbar height (px) */
+  --nav-height: 80px;
+}
+
+/* make scrolling smooth (already present in your CSS) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ensure target sections land below the fixed navbar */
+#explore-menu,
+#about,
+#footer {
+  scroll-margin-top: var(--nav-height);
+}
+body {
+  min-height: 100vh;
+  background-color: #F4ECDF;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  margin: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width:1050px) {
+  .app {
+    width: 90%;
+  }
+}

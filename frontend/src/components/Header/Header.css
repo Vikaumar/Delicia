@@ -1,0 +1,238 @@
+.header {
+  height: 34vw;
+  margin: 30px auto;
+  margin-top: 50px;
+  background: url("/header_img.png") no-repeat;
+  background-size: contain;
+  position: relative;
+}
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+}
+.header-contents h2 {
+  font-weight: 500;
+  color: white;
+  font-size: max(4.5vw, 22px);
+}
+.header-contents p {
+  color: white;
+  font-size: 1vw;
+}
+.header-contents button {
+  border: none;
+  color: #747474;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background: white;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+}
+.animated-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #ab162c;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+.animated-button:hover {
+  color: #fff;
+  border: transparent 2px solid;
+}
+.animated-button:hover::before {
+  width: 100%;
+}
+@media (max-width: 1050px) {
+  .header {
+    height: 38vw;
+  }
+  .header-contents {
+    max-width: 45%;
+  }
+}
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 55%;
+  }
+  .header-contents p {
+    display: none;
+  }
+  .header-contents button {
+    padding: 2vw 4vw;
+  }
+}
+
+/* Header.css */
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-title,
+  .animate-hero-sub,
+  .animate-hero-cta,
+  .animate-hero-burger {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Container initial clip to hide overflowing animates */
+.header-hero {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Slight parallax / depth - optional */
+.header-inner {
+  transform: translateZ(0);
+}
+
+/* Title: fade + slide up, slight letter spacing flourish */
+.animate-hero-title {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroTitleIn 0.9s cubic-bezier(0.22, 0.9, 0.25, 1) forwards;
+  animation-delay: 0.2s;
+  will-change: transform, opacity;
+}
+
+/* Subtitle: fade + slide up, delayed */
+.animate-hero-sub {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroSubIn 0.8s cubic-bezier(0.22, 0.9, 0.25, 1) forwards;
+  animation-delay: 0.5s;
+  will-change: transform, opacity;
+}
+
+/* CTA button: pop + fade */
+.animate-hero-cta {
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  animation: heroCtaIn 0.55s cubic-bezier(0.22, 0.9, 0.25, 1) forwards;
+  animation-delay: 0.85s;
+  will-change: transform, opacity;
+}
+/* Cleaner, more premium burger entrance */
+.hero-burger-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.animate-hero-burger {
+  opacity: 0;
+  transform: translateX(60px) scale(0.96);
+  animation: heroBurgerFadeSlide 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.7s;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transition: transform 0.4s ease;
+}
+
+@keyframes heroBurgerFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) scale(0.96);
+    filter: blur(2px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-3px) scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Subtle hover lift */
+.animate-hero-burger:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Optional: responsive smoother motion */
+@media (max-width: 768px) {
+  .animate-hero-burger {
+    animation-duration: 0.7s;
+    animation-delay: 0.4s;
+    transform: translateX(40px) scale(0.94);
+  }
+}
+
+/* Keyframes */
+@keyframes heroTitleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(2px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSubIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCtaIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Small responsive tweaks so animation looks good on mobile */
+@media (max-width: 768px) {
+  .animate-hero-burger {
+    animation-duration: 0.7s;
+    animation-delay: 0.5s;
+    transform: translateX(60px) scale(0.9);
+  }
+  .animate-hero-title {
+    animation-delay: 0.12s;
+  }
+  .animate-hero-sub {
+    animation-delay: 0.28s;
+  }
+  .animate-hero-cta {
+    animation-delay: 0.6s;
+  }
+}
