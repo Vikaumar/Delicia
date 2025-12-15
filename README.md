@@ -199,4 +199,3 @@ This project is licensed under the **MIT License**.
 ---
 
 ⭐ *This project is actively maintained and open to contributions.*
->>>>>>> ff4d598 (Add chatbot and subscription features to README)
