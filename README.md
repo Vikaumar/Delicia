@@ -1,4 +1,3 @@
-Delicia
 # 🍽️ Delicia — Production-Ready Full‑Stack Food Ordering Platform
 
 Delicia is a **production-oriented full-stack food ordering web application** built using the **MERN stack**. The project demonstrates strong fundamentals in **frontend engineering**, **backend API design**, **database modeling**, and **real-world application structuring**, making it well-suited for **resume shortlisting, internships, and placements**.
