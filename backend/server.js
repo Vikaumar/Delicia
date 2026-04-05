@@ -10,6 +10,11 @@ import contactRoutes from "./routes/contactRoutes.js";
 import partnerRoutes from "./routes/partnerRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // ─── Import OpenAI client ─────────────────────────────────────────
 import OpenAI from "openai";
@@ -57,7 +62,7 @@ app.post("/api/chat", async (req, res) => {
 // ─── Existing API routes ────────────────────────────────────────────
 app.use("/api/user", userRouter);
 app.use("/api/food", foodRouter);
-app.use("/images", express.static("uploads"));
+app.use("/images", express.static(path.join(__dirname, "uploads")));
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
