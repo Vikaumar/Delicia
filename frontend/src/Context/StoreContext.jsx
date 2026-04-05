@@ -8,7 +8,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const url = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
-  const [food_list, setFoodList] = useState(menu_list);
+  const [food_list, setFoodList] = useState([]);
 
   // Cart + auth
   const [cartItems, setCartItems] = useState({});
@@ -89,13 +89,27 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  useEffect(() => {
-    const stored = localStorage.getItem("token");
-    if (stored) {
-      setToken(stored);
-      loadCartData(stored);
+  const fetchFoodList = async () => {
+    try {
+      const response = await axios.get(`${url}/api/food/list`);
+      if (response.data.success) {
+        setFoodList(response.data.data);
+      }
+    } catch (err) {
+      console.error("Failed to fetch food list:", err);
     }
-    // we intentionally do not fetch food list here to preserve your prior behavior
+  };
+
+  useEffect(() => {
+    async function loadData() {
+      await fetchFoodList();
+      const stored = localStorage.getItem("token");
+      if (stored) {
+        setToken(stored);
+        await loadCartData(stored);
+      }
+    }
+    loadData();
   }, []);
 
   // ─── Promo helpers ──────────────────────────────
