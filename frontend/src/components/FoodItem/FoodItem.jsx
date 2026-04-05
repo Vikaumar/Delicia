@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { StoreContext } from '../../Context/StoreContext';
 
 export default function FoodItem({ item }) {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
   const { _id, name, price, description, image } = item;
 
   const count = cartItems[_id] || 0;
-  const imageSrc = image || require('../../assets/default.jpg');
+  const imageSrc = image ? `${url}/images/${image}` : require('../../assets/default.jpg');
 
   return (
     <div className="flex items-center transition-all duration-200 gap-5"

@@ -57,7 +57,7 @@ app.post("/api/chat", async (req, res) => {
 // ─── Existing API routes ────────────────────────────────────────────
 app.use("/api/user", userRouter);
 app.use("/api/food", foodRouter);
-app.use("/uploads", express.static("uploads"));
+app.use("/images", express.static("uploads"));
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
