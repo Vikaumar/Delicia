@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 import foodModel from "./models/foodModel.js";
 import menuData from "./menuData.js";
+import 'dotenv/config';
 
-const MONGO_URI = "mongodb://127.0.0.1:27017/Delicia";
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose
   .connect(MONGO_URI)
