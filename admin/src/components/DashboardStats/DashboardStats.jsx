@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./DashboardStats.css";
 import { TrendingUp, ShoppingCart, Users } from 'lucide-react';
+import { url } from "../../assets/assets";
 
 const DashboardStats = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/dashboard/stats")
+    axios.get(`${url}/api/dashboard/stats`)
       .then(res => {
         setStats(res.data.stats);
         setLoading(false);

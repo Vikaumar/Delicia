@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DashboardStats from "../../components/DashboardStats/DashboardStats";
 import SalesChart from "../../components/Charts/SalesChart";
+import { url } from "../../assets/assets";
 import "./Dashboard.css";
 
 const Dashboard = () => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/dashboard/stats")
+    axios.get(`${url}/api/dashboard/stats`)
       .then(res => setStats(res.data.stats))
       .catch(err => console.log(err));
   }, []);
