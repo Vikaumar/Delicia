@@ -14,7 +14,11 @@ const Dashboard = () => {
       .catch(err => console.log(err));
   }, []);
 
-  if (!stats) return <p>Loading Dashboard...</p>;
+  if (!stats) return (
+    <div className="dashboard-loader-container">
+      <div className="modern-spinner"></div>
+    </div>
+  );
 
 
 
