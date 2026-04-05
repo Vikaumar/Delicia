@@ -6,7 +6,7 @@ export default function FoodItem({ item }) {
   const { _id, name, price, description, image } = item;
 
   const count = cartItems[_id] || 0;
-  const imageSrc = image ? `${url}/images/${image}` : require('../../assets/default.jpg');
+  const imageSrc = image ? `${url}/images/${image}` : '/favicon.png';
 
   return (
     <div className="flex items-center transition-all duration-200 gap-5"
@@ -18,7 +18,7 @@ export default function FoodItem({ item }) {
           alt={name}
           onError={(e) => {
             e.currentTarget.onerror = null;
-            e.currentTarget.src = require('../../assets/default.jpg');
+            e.currentTarget.src = '/favicon.png';
           }}
         />
       </div>
