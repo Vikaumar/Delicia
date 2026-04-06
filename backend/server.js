@@ -12,6 +12,7 @@ import adminRoutes from "./routes/adminRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -63,6 +64,16 @@ app.post("/api/chat", async (req, res) => {
 app.use("/api/user", userRouter);
 app.use("/api/food", foodRouter);
 app.use("/images", express.static(path.join(__dirname, "uploads")));
+
+app.get("/api/debug-images", (req, res) => {
+  const dirPath = path.join(__dirname, "uploads");
+  try {
+    const files = fs.readdirSync(dirPath);
+    res.json({ dirPath, success: true, files: files });
+  } catch(err) {
+    res.json({ dirPath, success: false, error: err.message, stack: err.stack });
+  }
+});
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
